@@ -94,7 +94,7 @@ const makeActuatorMenu = a => {
 const makeMassMenu = m => {
     const menu = makeMenuContainer();
     const innerDiv = document.createElement('div');
-    const m_range = makeRangeInput('massRange', 0.08, 10, 0.01, m.mass);
+    const m_range = makeRangeInput('massRange', 0.08, 20, 0.01, m.mass);
     const r_range = makeRangeInput('radRange', 0.05, 0.5, 0.01, m.radius);
     const m_chFix = makeCheckboxInput('massFixCheck', m.isFixed);
     const c_sel = makeOptionInput('colGroupSel', [

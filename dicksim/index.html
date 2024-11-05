@@ -1,0 +1,64 @@
+<!---By doevix on GitHub--->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Phyzzy</title>
+        <meta charset="UTF-8">
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="ctrlBar">
+            <div class="ctrlItem">
+                <input id="pseBtn" type="button" class="controlBtn" value="pause">
+            </div>
+            <div class="ctrlItem">
+                <input id="cstBtn" type="button" class="controlBtn" value="construct">
+            </div>
+            <div class="ctrlItem">
+                <input id="delBtn" type="button" class="controlBtn" value="delete">
+            </div>
+            <div class="ctrlItem">
+                <input id="clrBtn" type="button" class="controlBtn" value="clear">
+            </div>
+            <div class="ctrlItem">
+                <input id="rstBtn" type="button" class="controlBtn" value="reset">
+            </div>
+            <div class="ctrlItem">
+                <input id="saveBtn" type="button" class="controlBtn" value="save">
+            </div>
+            <div class="ctrlItem">
+                <input id="loadBtn" type="button" class="controlBtn" value="load">
+            </div>
+            <div id="appName" class="ctrlItem">
+                Phyzzy
+            </div>
+        </div>
+        <!-- <div class="toolBar"></div> -->
+        <div class="canvasContainer">
+            <canvas id="canvas"></canvas>
+        </div>
+        
+        <div class="footer">
+            Keys: 'e': Environment options; 'z': selected mass/spring options
+        </div>
+
+        <script src="./js/phyzzy/v2d.js"></script>
+        <script src="./js/phyzzy/model_driver.js"></script>
+        <script src="./js/user_action.js"></script>
+        <script src="./js/player.js"></script>
+        <script>
+            const env = Model.environment();
+            env.s_bounds = {
+                x: 0, 
+                y: 0, 
+                w: canvas.width / Model.getScale(), 
+                h: canvas.height / Model.getScale()
+            };
+
+            Model.setStepsPerFrame(5);
+            Model.toggleCollisions();
+            frame();
+        </script>
+    </body>
+</html>
